@@ -16,7 +16,7 @@ use pocketmine\plugin\PluginBase;
 class Main extends PluginBase{
 
 	public function onEnable(){
-		$this->getLogger()->info("sw Gui Enabled made by TheBlast");
+		$this->getLogger()->info("This Plugin Is Now Enable");
 		if(!InvMenuHandler::isRegistered()){
 			InvMenuHandler::register($this);
 		}
@@ -26,7 +26,11 @@ class Main extends PluginBase{
 	}
 
 	public function onDisable(){
-		$this->getLogger()->info("sw Gui disabled made by TheBlast");
+		$this->getLogger()->info("===================================");
+		$this->getLogger()->info("Plugin Has Stoped Is The Server ON?");
+		$this->getLogger()->info("Plugin Has Stoped Is The Server ON?");
+		$this->getLogger()->info("===================================");
+		
 	}
 
 	public function onCommand(CommandSender $player, Command $cmd, string $label, array $args) : bool{
@@ -71,9 +75,30 @@ class Main extends PluginBase{
 	public function GUIListener(InvMenuTransaction $action) : InvMenuTransactionResult{
 		$itemClicked = $action->getOut();
 		$player = $action->getPlayer();
+		if($itemClicked->getId() == 95){
+			$action->getAction()->getInventory()->onClose($player);
+			$this->getServer()->dispatchCommand($player, "say 2020 tets");
+			return $action->discard();
+		}
+		$itemClicked = $action->getOut();
+		$player = $action->getPlayer();
+		if($itemClicked->getId() == 145){
+			$action->getAction()->getInventory()->onClose($player);
+			$this->getServer()->dispatchCommand($player, "say 2020 tets");
+			return $action->discard();
+		}
+		$itemClicked = $action->getOut();
+		$player = $action->getPlayer();
+		if($itemClicked->getId() == 260){
+			$action->getAction()->getInventory()->onClose($player);
+			$this->getServer()->dispatchCommand($player, "say 2020 tets");
+			return $action->discard();
+		}
+		$itemClicked = $action->getOut();
+		$player = $action->getPlayer();
 		if($itemClicked->getId() == 155){
 			$action->getAction()->getInventory()->onClose($player);
-			$this->getServer()->dispatchCommand($player, "sw join HellWorld");
+			$this->getServer()->dispatchCommand($player, "say 2020 tets");
 			return $action->discard();
 		}
 		if($itemClicked->getId() == 261){
